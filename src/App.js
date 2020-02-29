@@ -4,6 +4,7 @@ import { contextUser, Context } from './Store/reactContext'
 import ContextDataFiltre, { getStoreData, setStoreData, saveOnStore } from './Store/DataFiltre'
 import ContextFiltre from './Store/ContextFiltre'
 import Api from './Api/Api'
+import fonts from './fonts/fontFace.css'
 
 // Components
 import Log from './pages/LogLoging/Log'
@@ -12,7 +13,7 @@ import NewProfile from './pages/NewProfile/NewProfile'
 import PersonalInformation from './pages/PersonalInformation/PersonalInformation'
 import Datavisualitaion from './pages/Datavisualitaion/Datavisualisation'
 import NavBrarre from './components/Nav__barre/NavBrarre'
-import './styleGlobaux/global.scss'
+import './globalstyle/global.scss'
 
 const App = () => {
   const [userId, setUserId] = useState(sessionStorage.getItem('id'))
@@ -46,7 +47,7 @@ const App = () => {
   const Routes = ({ value }) => {
     return (
       <Router>
-        <NavBrarre isLog={value.isLog} setUserId={setUserId} />
+        <NavBrarre setLog={setLog} isLog={value.isLog} setUserId={setUserId} />
         <boxWrapper>
           <Switch>
             <Route exact path="/log/:typeLog">
